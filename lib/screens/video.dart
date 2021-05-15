@@ -38,12 +38,49 @@ class Video extends StatelessWidget {
                   "This is the Heading of the realted news This is another",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
-                Text(
-                  "Date & Time here",
-                  style: TextStyle(
-                      fontSize: 18, color: Color.fromRGBO(125, 125, 125, 1)),
+                Container(
+                  margin: EdgeInsets.only(top: 5),
+                  child: Text(
+                    "Date & Time here",
+                    style: TextStyle(
+                        fontSize: 17, color: Color.fromRGBO(125, 125, 125, 1)),
+                  ),
                 ),
+                Container(
+                  margin: EdgeInsets.only(top: 10),
+                  child: Text(
+                    "This is the Heading of the related news this is another Heading of the",
+                    style: TextStyle(
+                        fontSize: 18, color: Color.fromRGBO(125, 125, 125, 1)),
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.center,
+                  margin: const EdgeInsets.only(top: 20),
+                  padding: EdgeInsets.all(12),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: Colors.grey[200],
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.3),
+                          spreadRadius: 2,
+                          blurRadius: 2,
+                          offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ]),
+                  child: Text(
+                    "Information",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  ),
+                )
               ],
+            ),
+          ),
+          Container(
+            child: Row(
+              children: [],
             ),
           )
         ],
