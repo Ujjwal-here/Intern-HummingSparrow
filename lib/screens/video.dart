@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task/widgets/list.dart';
 
 class Video extends StatelessWidget {
   @override
@@ -10,24 +11,37 @@ class Video extends StatelessWidget {
       body: ListView(
         children: [
           Container(
-            color: Colors.white,
             padding: const EdgeInsets.all(15),
             alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.3),
+                  spreadRadius: 2,
+                  blurRadius: 2,
+                  offset: Offset(0, 3), // changes position of shadow
+                ),
+              ],
+            ),
             child: Text(
               "Video",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              Image(image: AssetImage("assets/forest.jpg")),
-              Icon(
-                Icons.play_arrow_rounded,
-                color: Colors.white,
-                size: 100,
-              )
-            ],
+          Container(
+            margin: const EdgeInsets.only(top: 10),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Image(image: AssetImage("assets/forest.jpg")),
+                Icon(
+                  Icons.play_arrow_rounded,
+                  color: Colors.white,
+                  size: 100,
+                )
+              ],
+            ),
           ),
           Container(
             padding: EdgeInsets.all(20),
@@ -79,8 +93,13 @@ class Video extends StatelessWidget {
             ),
           ),
           Container(
-            child: Row(
-              children: [],
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              children: [
+                ListVid(),
+                ListVid(),
+                ListVid(),
+              ],
             ),
           )
         ],
