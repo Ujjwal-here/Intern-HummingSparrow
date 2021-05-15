@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task/widgets/list.dart';
+import 'package:task/widgets/listVid.dart';
 
 class Video extends StatelessWidget {
   @override
