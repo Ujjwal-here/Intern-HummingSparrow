@@ -10,9 +10,6 @@ class Profile extends StatelessWidget {
         MediaQuery.of(context).orientation == Orientation.portrait;
     SizeConfig().init(context);
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromRGBO(26, 50, 43, 1),
-      ),
       body: ListView(
         children: [
           Container(

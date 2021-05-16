@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task/screens/home.dart';
-import 'package:task/screens/profile.dart';
-import 'package:task/screens/video.dart';
+
+import 'package:task/screens/navigation.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,9 +10,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Intern-HummingSparrow',
       debugShowCheckedModeBanner: false,
-      home: Video(),
+      home: Nav(),
     );
   }
 }
