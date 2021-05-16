@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:task/widgets/listDetails.dart';
 
+import '../config.dart';
+
 class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
+    SizeConfig().init(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(26, 50, 43, 1),
@@ -22,7 +27,9 @@ class Profile extends StatelessWidget {
                         color: Color.fromRGBO(237, 98, 6, 1), width: 2),
                   ),
                   child: CircleAvatar(
-                    radius: 80,
+                    radius: isPortrait
+                        ? SizeConfig.blockSizeHorizontal * 18
+                        : SizeConfig.blockSizeVertical * 20,
                     backgroundImage: AssetImage("assets/profile.png"),
                     backgroundColor: Color.fromRGBO(130, 139, 196, 1),
                   ),
@@ -32,14 +39,16 @@ class Profile extends StatelessWidget {
                   child: Text(
                     "Dinesh Yaduvanshi",
                     style: TextStyle(
-                      fontSize: 22,
+                      fontSize: isPortrait
+                          ? SizeConfig.safeBlockHorizontal * 4.8
+                          : SizeConfig.safeBlockVertical * 5,
                       fontWeight: FontWeight.bold,
                       color: Color.fromRGBO(237, 98, 6, 1),
                     ),
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 20),
+                  margin: const EdgeInsets.only(top: 20),
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   decoration: BoxDecoration(
@@ -56,7 +65,9 @@ class Profile extends StatelessWidget {
                   child: Text(
                     "Edit Profile",
                     style: TextStyle(
-                      fontSize: 17,
+                      fontSize: isPortrait
+                          ? SizeConfig.safeBlockHorizontal * 4.2
+                          : SizeConfig.safeBlockVertical * 4.5,
                       color: Color.fromRGBO(237, 98, 6, 1),
                     ),
                   ),

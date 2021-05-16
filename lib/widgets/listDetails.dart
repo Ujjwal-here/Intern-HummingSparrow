@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../config.dart';
+
 class DetailsList extends StatelessWidget {
   final String title;
   final String subtitle;
@@ -7,6 +9,9 @@ class DetailsList extends StatelessWidget {
   DetailsList({@required this.title, @required this.subtitle});
   @override
   Widget build(BuildContext context) {
+    final isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
+    SizeConfig().init(context);
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -16,7 +21,9 @@ class DetailsList extends StatelessWidget {
             child: Text(
               title,
               style: TextStyle(
-                  fontSize: 17,
+                  fontSize: isPortrait
+                      ? SizeConfig.safeBlockHorizontal * 4.5
+                      : SizeConfig.safeBlockVertical * 4.5,
                   fontWeight: FontWeight.bold,
                   color: Color.fromRGBO(209, 209, 209, 1)),
             ),
@@ -26,7 +33,9 @@ class DetailsList extends StatelessWidget {
             child: Text(
               subtitle,
               style: TextStyle(
-                  fontSize: 17,
+                  fontSize: isPortrait
+                      ? SizeConfig.safeBlockHorizontal * 4.3
+                      : SizeConfig.safeBlockVertical * 4.3,
                   fontWeight: FontWeight.bold,
                   color: Colors.black),
             ),
