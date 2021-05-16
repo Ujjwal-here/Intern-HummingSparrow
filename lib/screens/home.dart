@@ -4,6 +4,7 @@ import 'package:task/widgets/newsList.dart';
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(26, 50, 43, 1),

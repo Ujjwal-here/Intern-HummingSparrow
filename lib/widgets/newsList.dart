@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task/config.dart';
 
 class NewsList extends StatelessWidget {
   final String subtitle;
@@ -12,18 +13,27 @@ class NewsList extends StatelessWidget {
     @required this.img,
     @required this.newsType,
   });
+
   @override
   Widget build(BuildContext context) {
+    var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    SizeConfig().init(context);
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: isPortrait
+            ? MainAxisAlignment.spaceBetween
+            : MainAxisAlignment.center,
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: Container(
-              height: 130,
-              width: 140,
+              height: isPortrait
+                  ? SizeConfig.blockSizeVertical * 16
+                  : SizeConfig.blockSizeHorizontal * 18,
+              width: isPortrait
+                  ? SizeConfig.blockSizeHorizontal * 30
+                  : SizeConfig.blockSizeVertical * 35,
               child: Image(
                 fit: BoxFit.cover,
                 image: AssetImage(img),
@@ -31,40 +41,71 @@ class NewsList extends StatelessWidget {
             ),
           ),
           Container(
-            constraints: BoxConstraints(maxHeight: 120),
+            margin: isPortrait ? null : const EdgeInsets.only(left: 20),
+            constraints: BoxConstraints(
+              maxHeight: isPortrait
+                  ? SizeConfig.blockSizeVertical * 15
+                  : SizeConfig.blockSizeHorizontal * 17,
+            ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  constraints: BoxConstraints(maxWidth: 230),
+                  constraints: BoxConstraints(
+                    maxWidth: isPortrait
+                        ? SizeConfig.blockSizeHorizontal * 55
+                        : SizeConfig.blockSizeVertical * 55,
+                  ),
                   child: Text(
                     title,
-                    style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: isPortrait
+                            ? SizeConfig.safeBlockHorizontal * 4.5
+                            : SizeConfig.safeBlockVertical * 4.5,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
                 Container(
-                  constraints: BoxConstraints(maxWidth: 230),
+                  constraints: BoxConstraints(
+                    maxWidth: isPortrait
+                        ? SizeConfig.blockSizeHorizontal * 55
+                        : SizeConfig.blockSizeVertical * 55,
+                  ),
                   child: Text(
                     subtitle,
                     maxLines: 3,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 17, color: Colors.grey),
+                    style: TextStyle(
+                        fontSize: isPortrait
+                            ? SizeConfig.safeBlockHorizontal * 4.1
+                            : SizeConfig.safeBlockVertical * 4.1,
+                        color: Colors.grey),
                   ),
                 ),
                 Container(
-                  constraints: BoxConstraints(maxWidth: 230),
+                  constraints: BoxConstraints(
+                    maxWidth: isPortrait
+                        ? SizeConfig.blockSizeHorizontal * 55
+                        : SizeConfig.blockSizeVertical * 55,
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Icon(
                         Icons.calendar_today_outlined,
                         color: Colors.grey,
-                        size: 20,
+                        size: isPortrait
+                            ? SizeConfig.safeBlockHorizontal * 4.2
+                            : SizeConfig.safeBlockVertical * 4.2,
                       ),
                       Text(
                         "03-03-21",
-                        style: TextStyle(fontSize: 17, color: Colors.grey),
+                        style: TextStyle(
+                            fontSize: isPortrait
+                                ? SizeConfig.safeBlockHorizontal * 4.1
+                                : SizeConfig.safeBlockVertical * 4.1,
+                            color: Colors.grey),
                       ),
                       Container(
                         padding:
@@ -76,7 +117,9 @@ class NewsList extends StatelessWidget {
                         child: Text(
                           newsType,
                           style: TextStyle(
-                              fontSize: 16,
+                              fontSize: isPortrait
+                                  ? SizeConfig.safeBlockHorizontal * 3.5
+                                  : SizeConfig.safeBlockVertical * 3.5,
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
                         ),
@@ -84,7 +127,9 @@ class NewsList extends StatelessWidget {
                       Icon(
                         Icons.calendar_today_outlined,
                         color: Colors.grey,
-                        size: 20,
+                        size: isPortrait
+                            ? SizeConfig.safeBlockHorizontal * 4.1
+                            : SizeConfig.safeBlockVertical * 4.1,
                       ),
                     ],
                   ),
