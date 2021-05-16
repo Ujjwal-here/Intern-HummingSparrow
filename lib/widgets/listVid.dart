@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import '../config.dart';
 
 class ListVid extends StatelessWidget {
+  final String img;
+
+  ListVid({@required this.img});
   @override
   Widget build(BuildContext context) {
     final isPortrait =
@@ -21,7 +24,7 @@ class ListVid extends StatelessWidget {
                   width: isPortrait
                       ? SizeConfig.blockSizeHorizontal * 38
                       : SizeConfig.blockSizeVertical * 38,
-                  image: AssetImage("assets/forest.jpg"))),
+                  image: AssetImage(img))),
           Container(
             margin: isPortrait ? null : const EdgeInsets.only(left: 20),
             child: Column(
@@ -42,7 +45,7 @@ class ListVid extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 12),
+                  margin: const EdgeInsets.only(top: 12),
                   constraints: BoxConstraints(
                     maxWidth: isPortrait
                         ? SizeConfig.blockSizeHorizontal * 48
@@ -67,8 +70,8 @@ class ListVid extends StatelessWidget {
                             color: Colors.grey),
                       ),
                       Container(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 5, horizontal: 30),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 5, horizontal: 30),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(2),
                           color: Color.fromRGBO(237, 98, 6, 1),

@@ -93,7 +93,7 @@ class Video extends StatelessWidget {
                 Container(
                   alignment: Alignment.center,
                   margin: const EdgeInsets.only(top: 20),
-                  padding: EdgeInsets.all(12),
+                  padding: const EdgeInsets.all(12),
                   width: double.infinity,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
@@ -123,9 +123,15 @@ class Video extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             child: Column(
               children: [
-                ListVid(),
-                ListVid(),
-                ListVid(),
+                ListVid(
+                  img: "assets/forest.jpg",
+                ),
+                ListVid(
+                  img: "assets/forest.jpg",
+                ),
+                ListVid(
+                  img: "assets/forest.jpg",
+                ),
               ],
             ),
           )

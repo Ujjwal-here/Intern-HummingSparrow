@@ -108,8 +108,8 @@ class NewsList extends StatelessWidget {
                             color: Colors.grey),
                       ),
                       Container(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 5, horizontal: 25),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 5, horizontal: 25),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(2),
                           color: Color.fromRGBO(237, 98, 6, 1),
