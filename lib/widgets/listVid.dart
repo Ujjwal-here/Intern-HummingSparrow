@@ -37,6 +37,8 @@ class ListVid extends StatelessWidget {
                   ),
                   child: Text(
                     "This is the Heading of the realted news or may be extend",
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                         fontSize: isPortrait
                             ? SizeConfig.safeBlockHorizontal * 4

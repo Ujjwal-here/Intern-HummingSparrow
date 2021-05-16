@@ -59,10 +59,12 @@ class NewsList extends StatelessWidget {
                   ),
                   child: Text(
                     title,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                         fontSize: isPortrait
-                            ? SizeConfig.safeBlockHorizontal * 4.5
-                            : SizeConfig.safeBlockVertical * 4.5,
+                            ? SizeConfig.safeBlockHorizontal * 4.3
+                            : SizeConfig.safeBlockVertical * 4.3,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
