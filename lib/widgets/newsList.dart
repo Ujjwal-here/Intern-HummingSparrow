@@ -44,7 +44,7 @@ class NewsList extends StatelessWidget {
             margin: isPortrait ? null : const EdgeInsets.only(left: 20),
             constraints: BoxConstraints(
               maxHeight: isPortrait
-                  ? SizeConfig.blockSizeVertical * 15
+                  ? SizeConfig.blockSizeVertical * 16
                   : SizeConfig.blockSizeHorizontal * 17,
             ),
             child: Column(
