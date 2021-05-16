@@ -125,11 +125,11 @@ class NewsList extends StatelessWidget {
                         ),
                       ),
                       Icon(
-                        Icons.calendar_today_outlined,
-                        color: Colors.grey,
+                        Icons.bookmark_outline,
+                        color: Colors.black87,
                         size: isPortrait
-                            ? SizeConfig.safeBlockHorizontal * 4.1
-                            : SizeConfig.safeBlockVertical * 4.1,
+                            ? SizeConfig.safeBlockHorizontal * 4.8
+                            : SizeConfig.safeBlockVertical * 4.8,
                       ),
                     ],
                   ),
